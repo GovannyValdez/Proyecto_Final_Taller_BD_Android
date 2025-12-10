@@ -21,6 +21,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuInicioActivity" />
+        <activity android:name=".MenuEmpleadosActivity" />
+        <activity android:name=".MenuModelosActivity" />
+
 
     </application>
 
