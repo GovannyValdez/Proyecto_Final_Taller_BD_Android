@@ -23,6 +23,12 @@
         <activity android:name=".MenuInicioActivity" />
         <activity android:name=".MenuEmpleadosActivity" />
         <activity android:name=".MenuModelosActivity" />
+        <activity android:name=".MenuEmpleadosActivity" />
+        <activity android:name=".AgregarEmpleadoActivity" />
+        <activity android:name=".ConsultarEmpleadoActivity" />
+        <activity android:name=".ModificarEmpleadoActivity" />
+        <activity android:name=".EliminarEmpleadoActivity" />
+
 
 
     </application>
