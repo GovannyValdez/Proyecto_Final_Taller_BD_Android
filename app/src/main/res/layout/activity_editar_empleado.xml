@@ -1,287 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
-    android:fillViewport="true">
+    android:padding="20dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="24dp">
+        android:orientation="vertical">
 
-        <!-- Título -->
         <TextView
-            android:id="@+id/tvTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Editar Empleado"
-            android:textSize="28sp"
+            android:text="Modificar Empleado"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="#FF9800"
-            android:layout_marginTop="24dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:layout_gravity="center"
+            android:padding="10dp"/>
 
-        <!-- Subtítulo -->
-        <TextView
-            android:id="@+id/tvSubtitulo"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/txtSSN_Buscar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Modifique los campos necesarios"
-            android:textSize="14sp"
-            android:textColor="#666666"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/tvTitulo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:hint="Ingresar SSN del empleado"
+            android:inputType="text"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"/>
 
-        <!-- Campo SSN (solo lectura) -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilSSN"
-            android:layout_width="0dp"
+        <Button
+            android:id="@+id/btnBuscar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="SSN (Número de Seguro Social)"
-            android:layout_marginTop="32dp"
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusTopStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:helperText="Este campo no se puede modificar"
-            app:helperTextTextColor="#D32F2F"
-            app:layout_constraintTop_toBottomOf="@id/tvSubtitulo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:text="Buscar Empleado"
+            android:layout_marginTop="10dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etSSN"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="none"
-                android:enabled="false"
-                android:textColor="#999999"
-                android:maxLines="1" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Campo Nombre -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilNombre"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre *"
-            android:layout_marginTop="16dp"
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusTopStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:layout_constraintTop_toBottomOf="@id/tilSSN"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:hint="Nombre"
+            android:inputType="textPersonName"
+            android:layout_marginTop="15dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etNombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:maxLength="50"
-                android:maxLines="1" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Campo Apellido Paterno -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilApellidoPaterno"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/txtAP"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Apellido Paterno *"
-            android:layout_marginTop="16dp"
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusTopStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:layout_constraintTop_toBottomOf="@id/tilNombre"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:hint="Apellido Paterno"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etApellidoPaterno"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:maxLength="50"
-                android:maxLines="1" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Campo Apellido Materno -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilApellidoMaterno"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/txtAM"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Apellido Materno"
-            android:layout_marginTop="16dp"
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusTopStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:layout_constraintTop_toBottomOf="@id/tilApellidoPaterno"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etApellidoMaterno"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:maxLength="50"
-                android:maxLines="1" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Campo Dirección -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilDireccion"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/txtDireccion"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Dirección"
-            android:layout_marginTop="16dp"
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusTopStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:layout_constraintTop_toBottomOf="@id/tilApellidoMaterno"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:inputType="textPostalAddress"
+            android:layout_marginTop="10dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etDireccion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPostalAddress"
-                android:maxLength="200"
-                android:maxLines="2" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Campo Teléfono -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilTelefono"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/txtTelefono"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Teléfono"
-            android:layout_marginTop="16dp"
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusTopStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:layout_constraintTop_toBottomOf="@id/tilDireccion"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:inputType="phone"
+            android:layout_marginTop="10dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etTelefono"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:maxLength="15"
-                android:maxLines="1" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Campo Salario -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilSalario"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/txtSalario"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Salario *"
-            android:layout_marginTop="16dp"
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusTopStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:prefixText="$"
-            app:layout_constraintTop_toBottomOf="@id/tilTelefono"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:hint="Salario"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="10dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etSalario"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:maxLines="1" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Campo Número de Membresía Sindicato -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilMembresia"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/txtMembresia"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Número de Membresía Sindicato *"
-            android:layout_marginTop="16dp"
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusTopStart="12dp"
-            app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusBottomStart="12dp"
-            app:boxCornerRadiusBottomEnd="12dp"
-            app:layout_constraintTop_toBottomOf="@id/tilSalario"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:hint="Número de Membresía Sindicato"
+            android:inputType="text"
+            android:layout_marginTop="10dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etMembresia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:maxLength="20"
-                android:maxLines="1" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Botón Actualizar Empleado -->
         <Button
-            android:id="@+id/btnActualizar"
-            android:layout_width="0dp"
+            android:id="@+id/btnModificar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Actualizar Empleado"
-            android:textSize="18sp"
-            android:paddingVertical="16dp"
-            android:backgroundTint="#FF9800"
-            android:layout_marginTop="32dp"
-            app:cornerRadius="12dp"
-            app:layout_constraintTop_toBottomOf="@id/tilMembresia"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <!-- Botón Cancelar -->
-        <Button
-            android:id="@+id/btnCancelar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Cancelar"
-            android:textSize="16sp"
-            android:paddingVertical="14dp"
-            android:backgroundTint="#757575"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="24dp"
-            app:cornerRadius="12dp"
-            app:layout_constraintTop_toBottomOf="@id/btnActualizar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="Modificar"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
 
 </ScrollView>
